@@ -7,8 +7,11 @@ class Nav extends React.Component {
     onLinkClickHandler = (e) => {
         e.preventDefault()
 
-        const {currentPage} = this.props.currentPage;
-        const nextPage = (currentPage + 1) % 6;
+        const {id} = e.currentTarget;
+        const step = parseInt(id);
+        
+        const currentPage = this.props.currentPage;
+        const nextPage = (currentPage + step) % 6;
 
         this.props.onRoutPage(nextPage);
     }
@@ -17,14 +20,15 @@ class Nav extends React.Component {
 
         const btnPrev = this.props.btnPrev;
         const btnNext = this.props.btnNext;
+        const currentPage = this.props.currentPage;
 
         return(
             <nav>
                 {
-                    (btnPrev!=='') && <a className="btn-prev" onClick={this.onLinkClickHandler}> {btnPrev} </a>
+                    (btnPrev!=='') && <a href='#' id='-1' className="btn-prev" onClick={this.onLinkClickHandler}> {btnPrev} </a>
                 }
                 {
-                    (btnNext!=='') && <a className="btn-next" onClick={this.onLinkClickHandler}> {btnNext} </a>
+                    (btnNext!=='') && <a href='#' id='1' className="btn-next" onClick={this.onLinkClickHandler}> {btnNext} </a>
                 }     
             </nav>
         );
@@ -33,7 +37,9 @@ class Nav extends React.Component {
 
 Nav.propTypes = {
     btnPrev: PropTypes.string.isRequired,
-    btnNext: PropTypes.string.isRequired
+    btnNext: PropTypes.string.isRequired,
+    currentPage: PropTypes.number.isRequired,
+    onRoutPage: PropTypes.func.isRequired,
 }
 
 
