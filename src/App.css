@@ -1,38 +1,86 @@
-.App {
-  text-align: center;
+/*
+
+E8F3D6
+
+FCF9BE
+
+FFDCA9
+
+FAAB78
+
+*/
+
+* {
+    border: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+    --first-color: #191919;
+    --second-color: #2D4263;
+    --third-color: #C84B31;
+    --fourth-color: #ECDBBA;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+body {
+    background-color: var(--fourth-color);
+    color: var(--second-color);
+}
+
+header {
+    padding: 10px 20px;
+    font-size: small;
+    text-align: center;
+    color: var(--third-color);
+    background-color: var(--first-color);
+}
+
+nav {
+    margin: 3px auto;
+    padding: 10px;
+    text-align: center;
+    overflow: hidden;
+    width: fit-content;
+}
+
+nav a {
+    background-color: var(--first-color);
+    color: var(--third-color);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    margin: 3px;
+    border-radius: 25%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+nav a:hover {
+    background-color: var(--second-color);
+    color: var(--fourth-color);
+}
+
+.ListContainer {
+    padding: 20px 10%;
+    text-align: center;
+}
+
+.ListContainer textarea,input {
+    border: 1px solid var(--second-color);
+    color: var(--third-color);
+    font-size: larger;
+    margin: 10px auto;
+}
+
+.ListContainer textarea {
+    width: 100%;
+}
+
+textarea:focus, input:focus {
+    border: 2px solid var(--third-color);
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input, textarea {
+    display: block;
+    font-family: inherit;
+    font-size: inherit;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
