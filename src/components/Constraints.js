@@ -29,6 +29,9 @@ class Constraints extends React.Component {
                 </label>
                 <label>عدد الاقتباسات أكثر من: <input
                     type='number'
+                    min='0'
+                    inputMode='numeric'
+                    pattern="[0-9]*"
                     required
                     value={this.state.quotaionNumber}
                     onChange={this.onChangeQuotionNumberHandler}

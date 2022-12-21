@@ -20,15 +20,16 @@ class Nav extends React.Component {
 
         const btnPrev = this.props.btnPrev;
         const btnNext = this.props.btnNext;
-        const currentPage = this.props.currentPage;
+        const isValidate = this.props.isValidate;
 
         return(
             <nav>
                 {
-                    (btnPrev!=='') && <a href='#' id='-1' className="btn-prev" onClick={this.onLinkClickHandler}> {btnPrev} </a>
+                    (btnPrev!=='') && <button id='-1' className="btn-prev" onClick={this.onLinkClickHandler}> {btnPrev} </button>
                 }
                 {
-                    (btnNext!=='') && <a href='#' id='1' className="btn-next" onClick={this.onLinkClickHandler}> {btnNext} </a>
+                    (btnNext!=='') && <button id='1'  className="btn-next" onClick={this.onLinkClickHandler}
+                                    disabled = {!isValidate}> {btnNext} </button>
                 }     
             </nav>
         );
@@ -40,6 +41,7 @@ Nav.propTypes = {
     btnNext: PropTypes.string.isRequired,
     currentPage: PropTypes.number.isRequired,
     onRoutPage: PropTypes.func.isRequired,
+    isValidate: PropTypes.bool.isRequired,
 }
 
 
